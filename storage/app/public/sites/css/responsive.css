@@ -1,0 +1,461 @@
+
+
+@media screen and (max-width: 1337px) {
+
+	.header img{
+		width: 80%;
+		margin: 0 auto;
+	}
+
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+
+	.nav > li > a{
+		padding: 13px 24px;
+	}
+
+	.jcarousel-control-prev{
+		left: 0;
+	}
+
+	.jcarousel-control-next{
+		right: 0;
+	}
+
+	.headerBTM{
+		position:static;
+		margin-top: -50px;
+	}
+
+	.our_profile_section::before{
+		display: none;
+	}
+
+	.our_profile_section::after{
+		display: none;
+	}
+
+	.our_profile_section{
+		background: #ededed;
+		height: inherit;
+		padding-bottom: 50px;
+	}
+
+	.graphics2{
+		display: none;
+	}
+
+	.graphics1{
+		display: none;
+	}
+
+	.profile_info{
+		padding-top: 50px;
+	}
+
+	.Pheading{
+		display: none;
+	}
+
+	.profile_info p{
+		min-height: 170px;
+	}
+
+	.nbs-flexisel-item a{
+		margin: 106px auto;
+	}
+
+	.whybox h3{
+		font-size: 16px;
+	}
+
+	.footer_links ul li{
+		padding: 0 8px;
+	}
+
+	.about_right img{
+		width: 100%;
+	}
+
+	.pertnerlogo img{
+		width: 100%;
+	}
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+	.CI{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	.nav > li > a{
+		padding: 13px 31px;
+	}
+
+	.jcarousel-control-prev{
+		left: 0;
+	}
+
+	.jcarousel-control-next{
+		right: 0;
+	}
+
+	.service_box{
+		margin-bottom: 20px;
+	}
+
+	.simplefilter li, .multifilter li, .sortandshuffle li{
+		margin: 0 2px;
+    padding: 1rem 10px;
+	}
+
+	.logo img{
+		width: 100%;
+	}
+
+	.nav > li > a{
+		padding: 13px 8px;
+	}
+
+	.headerBTM{
+		position:static;
+		margin-top: -50px;
+	}
+
+	.our_profile_section::before{
+		display: none;
+	}
+
+	.our_profile_section::after{
+		display: none;
+	}
+
+	.our_profile_section{
+		background: #ededed;
+		height: inherit;
+		padding-bottom: 50px;
+	}
+
+	.graphics2{
+		display: none;
+	}
+
+	.graphics1{
+		display: none;
+	}
+
+	.profile_info{
+		padding-top: 50px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 50px;
+	}
+
+	.brpd{
+		border-bottom: none !important;
+		padding-bottom: 0 !important;
+	}
+
+	.Pheading{
+		display: none;
+	}
+
+	.profile_info p{
+		min-height: inherit;
+	}
+
+	.nbs-flexisel-item a{
+		margin: 106px auto;
+	}
+
+	.whybox h3{
+		font-size: 16px;
+	}
+
+	.footer_links ul li{
+		padding: 0 8px;
+	}
+
+	.profile_info a{
+		margin-top: 15px;
+	}
+
+	.wcu{
+		text-align: center;
+		width: 100%;
+		float: left;
+	}
+
+	.whybox{
+		text-align: center;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.whybox img{
+		margin-bottom: 15px;
+	}
+
+	.about_ser img{
+		margin-bottom: 15px;
+	}
+
+	.companyid h3{
+		margin-bottom: 20px;
+	}
+
+	.pertnerlogo img{
+		width: 100%;
+	}
+
+
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+	.CI{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+	.mobile{
+		display: block;
+		padding-top: 15px;
+		text-align: left;
+	}
+
+	.navbar{
+		margin-bottom: 0 !important;
+	}
+
+	.desktop{
+		display: none;
+	}
+
+	.navbar{
+		position: static !important;
+		margin-bottom: 15px;
+		border-radius:0; 
+	}
+
+	.navbar-collapse{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	.logo{
+		width: 100%;
+		text-align: center;
+		position: static;
+	}
+
+	.navbar-header{
+		background: #88a8ce;
+	}
+
+	.header img{
+		width: 95%;
+	}
+
+	.main_content h1{
+		font-size: 36px;
+	}
+
+	.main_content p{
+		font-size: 20px;
+		line-height: 30px;
+	}
+
+	.header{
+		padding: 70px 0;
+		margin-top: 65px;
+	}
+
+	.jcarousel-control-prev{
+		display: none;
+	}
+
+	.jcarousel-control-next{
+		display: none;
+	}
+
+	.jcarousel-pagination{
+		display: block;
+	}
+
+	.iconarea{
+		overflow: inherit;
+	}
+
+	.service_box{
+		margin-bottom: 20px;
+	}
+
+	.jcarousel li{
+		list-style: none;
+	}
+
+	.simplefilter li{
+		width: 100%;
+		margin: 8px 0;
+	}
+
+	.nav > li > a{
+		padding: 13px 11px;
+	}
+
+	.headerBTM{
+		position:static;
+		margin-top: 0;
+		border-radius: 0
+	}
+
+	.headerBTM .block{
+		width: 50%;
+		border-bottom: 1px solid #f7cc8f;
+	}
+
+	.our_profile_section::before{
+		display: none;
+	}
+
+	.our_profile_section::after{
+		display: none;
+	}
+
+	.our_profile_section{
+		background: #ededed;
+		height: inherit;
+		padding-bottom: 50px;
+	}
+
+	.graphics2{
+		display: none;
+	}
+
+	.graphics1{
+		display: none;
+	}
+
+	.profile_info{
+		padding-top: 50px;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 50px;
+	}
+
+	.brpd{
+		border-bottom: none !important;
+		padding-bottom: 0 !important;
+	}
+
+	.brpd1{
+		padding-top: 50px !important;
+	}
+
+	.padleft{
+		padding-left: 0;
+	}
+
+	.Pheading{
+		display: none;
+	}
+
+	.profile_info p{
+		min-height: inherit;
+	}
+
+	.nbs-flexisel-item a{
+		margin: 143px auto;
+	}
+
+	.whybox h3{
+		font-size: 16px;
+	}
+
+	.footer_links ul li{
+		padding: 0 8px;
+	}
+
+	.profile_info a{
+		margin-top: 15px;
+	}
+
+	.wcu{
+		text-align: center;
+		width: 100%;
+		float: left;
+	}
+
+	.whybox{
+		text-align: center;
+		padding-bottom: 30px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	.whybox img{
+		margin-bottom: 15px;
+	}
+
+	.footer_links ul li{
+		width: 100%;
+		text-align: center;
+		clear: both;
+		border: 0;
+		padding: 10px 0;
+	}
+
+	.copy{
+		width: 100%;
+		text-align: center;
+		float: left;
+		margin-top: 30px;
+	}
+
+	.padd-rh{
+		padding: 0;
+	}
+
+	.featured_right{
+		text-align: center;
+	}
+
+	.featured_right img{
+		margin-bottom: 10px;
+	}
+
+	.navbar-default .navbar-nav > li > a{
+		text-align: left;
+	}
+
+	.navbar-nav .open .dropdown-menu{
+		margin-top: 0 !important;
+	}
+
+	.about_ser img{
+		margin-bottom: 15px;
+	}
+
+	.companyid h3{
+		margin-bottom: 20px;
+	}
+
+	.pertnerlogo img{
+		width: 100%;
+	}
+
+	.about_right img{
+		width: 100%;
+	}
+
+	.pertnerlogo{
+		margin-bottom: 15px;
+	}
+
+	
+
+
+}

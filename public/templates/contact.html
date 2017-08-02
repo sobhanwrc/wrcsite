@@ -1,0 +1,105 @@
+<div class="container-fluid">
+        <div class="row">
+            <div class="inner_header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 wow fadeIn">
+                            <h2>contact us</h2>
+                            <div class="paging">
+                                Home <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--////////////////////////////////////////////////////// Header End \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <!--////////////////////////////////////////////////////// Team Start \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+    <div class="container" ng-controller="MainController">
+        <div class="row">
+            <div class="contact_sec">
+                <div class="col-md-8">
+                    <div class="contactformB wow fadeIn">
+                    <form name="myContactus" ng-submit="doContact(myContactus.$valid)" method="post" novalidate="novalidate">
+                    <!-- <div>{{message}}</div> -->
+                        <div class="col-md-6" ng-class="{
+                                            'has-error':!myContactus.myFisrtname.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myFisrtname.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            <label>First Name</label>
+                            <input type="text" name="myFisrtname" ng-model="contact.myFisrtname" required>
+                            <span class="help-block" ng-show="myContactus.myFisrtname.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter First Name</span>
+                        </div>
+                        <div class="col-md-6" ng-class="{
+                                            'has-error':!myContactus.myLastname.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myLastname.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            <label>Last Name</label>
+                            <input type="text" name="myLastname" ng-model="contact.myLastname" required>
+                            <span class="help-block" ng-show="myContactus.myLastname.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Last Name</span>
+                        </div>
+                        <div class="col-md-6" ng-class="{
+                                            'has-error':!myContactus.myEmail.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myEmail.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            <label>Email</label>
+                            <input type="email" name="myEmail" ng-model="contact.myEmail" required="required">
+                            <span class="help-block" ng-show="myContactus.myEmail.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Email ID</span>
+                            <span class="help-block" ng-show="myContactus.myEmail.$error.email && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Valid Email ID</span>
+                        </div>
+                        <div class="col-md-6" ng-class="{
+                                            'has-error':!myContactus.myPhone.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myPhone.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            <label>Mobile</label>
+                            <input type="text" name="myPhone" ng-model="contact.myPhone" required="required" ng-maxlength="10" ng-minlength="10" ng-pattern="/^[0-9]*$/">
+                            <span class="help-block" ng-show="myContactus.myPhone.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Mobile No</span>
+                            <span class="help-block" ng-show="myContactus.myPhone.$error.pattern && (!myContactus.$pristine || myContactus.$submitted)">Mobile No Must Numeric</span>
+                            <span class="help-block" ng-show="myContactus.myPhone.$error.maxlength && (!myContactus.$pristine || myContactus.$submitted)">Mobile No Must Have 10 Digits</span>
+                            <span class="help-block" ng-show="myContactus.myPhone.$error.minlength && (!myContactus.$pristine || myContactus.$submitted)">Mobile No Must Have 10 Digits</span>
+
+                        </div>
+
+                        <div class="col-md-12" ng-class="{
+                                            'has-error':!myContactus.myComments.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myComments.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            <label>Comments</label>
+                            <textarea rows="6" name="myComments" ng-model="contact.myComments" required=""></textarea>
+                            <span class="help-block" ng-show="myContactus.myComments.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Comments</span>
+                        </div>
+                        <div class="col-md-3">
+                        <button type="submit" ng-disabled="isDisabled">SUBMIT</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="CI wow fadeIn">
+                        <h3>{{contact_details[0].company_name}}</h3>
+                        <p>{{contact_details[0].company_address}}</p>
+
+                        <h4><i class="fa fa-phone-square" aria-hidden="true"></i> Phone</h4>
+                        <p>+91 {{contact_details[0].company_phone_no}}</p>
+
+                        <h4><i class="fa fa-envelope" aria-hidden="true"></i> Email</h4>
+                        <p><a href="mailto:info@wrctechnologies.com">{{contact_details[0].company_email}}</a></p>
+
+                        <h4><i class="fa fa-share-alt-square" aria-hidden="true"></i> Connect with us</h4>
+                        <p>
+                        <a href="{{contact_details[0].company_fb_link}}" class="CIS fb_links"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        <a href="{{contact_details[0].company_twiter_link}}" class="CIS tw_links"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="{{contact_details[0].company_linkin_link}}" class="CIS ln_links"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </p>
+
+                       
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
