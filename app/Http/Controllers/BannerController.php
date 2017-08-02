@@ -573,8 +573,22 @@ class BannerController extends Controller
     }
 
     public function job_vacency_add (Request $request) {
-      Validator::make('all',[
+      Validator::make($request->all(),[
+        'recruit_for' => 'required',
+        'exp' => 'required',
+        'salary_range' => 'required',
+        'location' => 'required',
+        'editor1' => 'required',
+        'tech_skills' => 'required',
+        'soft_skills' => 'required'
       ],[
+        'recruit_for.required' => 'Please enter title.',
+        'exp.required' => 'Please enter experience.',
+        'salary_range.required' => 'Please enter salary range.',
+        'location.required' => 'Please enter location.',
+        'editor1.required' => 'Please enter desired candidate profile.',
+        'tech_skills.required' => 'Please enter technical skills.',
+        'soft_skills.required' => 'Please enter soft skills.'
       ])->validate();
     }
 }
