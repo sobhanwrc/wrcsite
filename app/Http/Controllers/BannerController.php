@@ -563,4 +563,18 @@ class BannerController extends Controller
       }
 
     }
+
+    public function job_vacency_listings(){
+      return view('dashboard.job_vacency_listings');
+    }
+
+    public function add_job_list(){
+      return view('dashboard.job_list_add');
+    }
+
+    public function job_vacency_add (Request $request) {
+      Validator::make('all',[
+      ],[
+      ])->validate();
+    }
 }

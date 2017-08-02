@@ -124,6 +124,7 @@
             <li><a href="/portfolio_listings"><i class="fa fa-circle-o"></i>Portfolio Type Listings</a></li>
             <li><a href="/website_settings_listings"><i class="fa fa-circle-o"></i>Website Settings Listings</a></li>
             <li><a href="/prtfolios_listings"><i class="fa fa-circle-o"></i>Portfolios Listings</a></li>
+            <li><a href="/job_vacency_list"><i class="fa fa-circle-o"></i>Job Vacency Listings</a></li>
           </ul>
         </li>
         {{-- <li>
