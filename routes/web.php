@@ -64,7 +64,7 @@ Route::group(['middleware' => ['adminlogin']], function() {
 	Route::get('/portfolios_listings_delete/{portfolio_id}', 'BannerController@portfolios_listings_delete');
 	Route::get('/job_vacency_list', 'BannerController@job_vacency_listings');
 	Route::get('/add_job_list', 'BannerController@add_job_list');
-	Route::get('/job_vacency_add', 'BannerController@job_vacency_add')
+	Route::get('/job_vacency_add', 'BannerController@job_vacency_add');
 	Route::get('/sign_out','LoginController@logout');
 
 });
