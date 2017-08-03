@@ -10,6 +10,7 @@ use App\Portfolio;
 use App\poprtfolio_type;
 use App\website_settings;
 use App\User;
+use App\Job_vacency;
 use Auth;
 use Image;
 
@@ -565,7 +566,9 @@ class BannerController extends Controller
     }
 
     public function job_vacency_listings(){
-      return view('dashboard.job_vacency_listings');
+      $fetch_all_job_vacency = Job_vacency::where('status',1)->get()->toArray();
+
+      return view('dashboard.job_vacency_listings')->with('fetch_all_job_vacency', $fetch_all_job_vacency);
     }
 
     public function add_job_list(){
@@ -580,7 +583,8 @@ class BannerController extends Controller
         'location' => 'required',
         'editor1' => 'required',
         'tech_skills' => 'required',
-        'soft_skills' => 'required'
+        'soft_skills' => 'required',
+        'qualifications' => 'required'
       ],[
         'recruit_for.required' => 'Please enter title.',
         'exp.required' => 'Please enter experience.',
@@ -588,7 +592,83 @@ class BannerController extends Controller
         'location.required' => 'Please enter location.',
         'editor1.required' => 'Please enter desired candidate profile.',
         'tech_skills.required' => 'Please enter technical skills.',
-        'soft_skills.required' => 'Please enter soft skills.'
+        'soft_skills.required' => 'Please enter soft skills.',
+        'qualifications.required' => 'Please enter qualification.'
       ])->validate();
+
+      $add = new Job_vacency();
+      $add->recruit_title = $request->recruit_for;
+      $add->experience = $request->exp;
+      $add->location = $request->location;
+      $add->salary_range = $request->salary_range;
+      $add->desired_candidate_profile = $request->editor1;
+      $add->technical_skills = $request->tech_skills;
+      $add->soft_skills = $request->soft_skills;
+      $add->qualification_needed = $request->qualifications;
+      $add->status = 1;
+
+      if($add->save()){
+        $request->session()->flash("submit-status", "Job added successfully.");
+        return redirect('/job_vacency_list');
+      }
+    }
+
+    public function job_vacency_edit($job_id){
+      $id = base64_decode($job_id);
+
+      $fetch_job_details = Job_vacency::find($id)->toArray();
+
+      return view('dashboard.job_vacency_edit_page')->with('fetch_job_details', $fetch_job_details);
+    }
+
+    public function job_vacency_edit_submit(Request $request, $job_id) {
+      $id = base64_decode($job_id);
+
+      Validator::make($request->all(),[
+        'recruit_for' => 'required',
+        'exp' => 'required',
+        'salary_range' => 'required',
+        'location' => 'required',
+        'editor1' => 'required',
+        'tech_skills' => 'required',
+        'soft_skills' => 'required',
+        'qualifications' => 'required'
+      ],[
+        'recruit_for.required' => 'Please enter title.',
+        'exp.required' => 'Please enter experience.',
+        'salary_range.required' => 'Please enter salary range.',
+        'location.required' => 'Please enter location.',
+        'editor1.required' => 'Please enter desired candidate profile.',
+        'tech_skills.required' => 'Please enter technical skills.',
+        'soft_skills.required' => 'Please enter soft skills.',
+        'qualifications.required' => 'Please enter qualification.'
+      ])->validate();
+
+      $edit = Job_vacency::find($id);
+      $edit->recruit_title = $request->recruit_for;
+      $edit->experience = $request->exp;
+      $edit->location = $request->location;
+      $edit->salary_range = $request->salary_range;
+      $edit->desired_candidate_profile = $request->editor1;
+      $edit->technical_skills = $request->tech_skills;
+      $edit->soft_skills = $request->soft_skills;
+      $edit->qualification_needed = $request->qualifications;
+
+      if($edit->save()){
+        $request->session()->flash("submit-status", "Job edit successfully.");
+        return redirect('/job_vacency_list');
+      }
+    }
+
+    public function job_vacency_delete(Request $request, $job_id) {
+      $id = base64_decode($job_id);
+
+      $delete = Job_vacency::find($id);
+      $delete->status = 5;
+
+      if($delete->save()){
+        $request->session()->flash("submit-status", "Job deleted successfully.");
+        return redirect('/job_vacency_list');
+      }
     }
 }

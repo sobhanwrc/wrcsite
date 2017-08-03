@@ -43,17 +43,22 @@
                   <th>Action</th>
                 </tr>
                 </thead>
-                  {{-- @if($all_portfolio_types)
-                    @foreach($all_portfolio_types as $value)
+                  @if($fetch_all_job_vacency)
+                    @foreach($fetch_all_job_vacency as $value)
                       <tr>
-                        <td>{{$value['portfolio_type']}}</td>
+                        <td>{{$value['recruit_title']}}</td>
+                        <td>{{$value['experience']}}</td>
+                        <td>{{$value['salary_range']}}</td>
+                        <td>{{$value['qualification_needed']}}</td>
+                        <td>{{$value['location']}}</td>
+                        <td>{{$value['status'] == 1 ? 'Active' : 'Inactive'}}</td>
                         <td>{{$value['created_at']}}</td>
-                        <td><a href="/portfolio_type_edit/{{base64_encode($value['id'])}}" >Edit</a>&nbsp;|&nbsp;<a href="/portfolio_type_delete/{{base64_encode($value['id'])}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                        <td><a href="/job_vacency_edit/{{base64_encode($value['id'])}}" >Edit</a>&nbsp;|&nbsp;<a href="/job_vacency_delete/{{base64_encode($value['id'])}}" onclick="return confirm('Are you sure?')">Delete</a></td>
                       </tr>
                     
                     @endforeach
                   
-                  @endif --}}
+                  @endif
                 <tbody>
                 </tbody>
               </table>
