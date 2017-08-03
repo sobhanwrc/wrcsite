@@ -566,7 +566,8 @@ class BannerController extends Controller
     }
 
     public function job_vacency_listings(){
-      $fetch_all_job_vacency = Job_vacency::where('status',1)->get()->toArray();
+      $fetch_all_job_vacency = Job_vacency::where('status',1)->orderby('id', 'desc')
+                                                            ->get()->toArray();
 
       return view('dashboard.job_vacency_listings')->with('fetch_all_job_vacency', $fetch_all_job_vacency);
     }

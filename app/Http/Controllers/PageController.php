@@ -57,5 +57,11 @@ class PageController extends Controller
         return response()->json(['banner_details'=>$banner_details,'testimonial_details'=>$testimonial_details, 'portfolio_details'=>$portfolio_details]);
     }
 
+    protected function job_vacency_details (Request $request) {
+        $vacency_details = \App\Job_vacency::where('status', '1')->get();
+
+        return responce()->json(['job_details'=>$vacency_details]);
+    }
+
    
 }

@@ -65,6 +65,17 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert){
 		});
 	};
 
+	$scope.job_details = function() {
+		$http.get('/api/job-vacency-details').then(function(responce){
+
+			$scope.job_details = responce.data.job_details;
+			console.log($scope.job_details);
+
+		}).catch(function(reson){
+
+		});
+	};
+
 	
 
 }).directive('slider',function() {
