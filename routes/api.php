@@ -21,4 +21,5 @@ Route::post('/contact-us-submit','PageController@contact_us_submit');
 Route::get('/wrc-website-details','PageController@wrc_website_details');
 Route::get('/load-home-content','PageController@load_home_content');
 Route::get('/job-vacency-details', 'PageController@job_vacency_details');
+Route::get('/view-job-details/{job_id}', 'PageController@view_individuals_job_details');
 

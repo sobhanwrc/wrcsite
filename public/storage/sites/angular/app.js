@@ -69,7 +69,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert){
 		$http.get('/api/job-vacency-details').then(function(responce){
 
 			$scope.job_details = responce.data.job_details;
-			console.log($scope.job_details);
+			// console.log($scope.job_details);
 
 		}).catch(function(reson){
 
