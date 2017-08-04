@@ -1,4 +1,4 @@
-var appWrc = angular.module('appWrc',['appRoutes', 'oitozero.ngSweetAlert', 'ngSanitize']);
+var appWrc = angular.module('appWrc',['appRoutes', 'oitozero.ngSweetAlert','ngSanitize']);
 
 appWrc.directive('myNavbar',function(){
 	return {
@@ -9,11 +9,13 @@ appWrc.directive('myNavbar',function(){
 });
 
 
-
-appWrc.controller('MainController',function($scope,$http,SweetAlert){
+appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams,$sce){
 	$scope.banner_details = {};
 	$scope.testimonial_details = {};
 	$scope.portfolio_details = {};
+	$scope.technical_skills = '';
+	$scope.soft_skills = '';
+	$scope.desired_candidate_profile = '';
 	
 	$scope.doContact = function(valid) {
 		if(valid) {
@@ -75,6 +77,17 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert){
 
 		});
 	};
+
+	$scope.job_description = function () {
+		$http.get('api/view-job-details', {params: {job_id:$routeParams.id}}).then(function(response){
+			$scope.details = response.data.details;
+			$scope.technical_skills = $sce.trustAsHtml($scope.details.technical_skills);
+			$scope.soft_skills = $sce.trustAsHtml($scope.details.soft_skills);
+			$scope.desired_candidate_profile = $sce.trustAsHtml($scope.details.desired_candidate_profile);
+		}).catch(function(reason){
+
+		});
+	}
 
 	
 

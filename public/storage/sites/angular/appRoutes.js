@@ -13,5 +13,7 @@ appRoutes.config(function($routeProvider,$locationProvider){
 		templateUrl: 'templates/portfolio.html'
 	}).when('/about-us',{
 		templateUrl: 'templates/about-us.html'
+	}).when('/view-job-details/:id',{
+		templateUrl: 'templates/job_description.html'
 	});
 });

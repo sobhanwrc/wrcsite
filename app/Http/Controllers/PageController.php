@@ -63,9 +63,9 @@ class PageController extends Controller
         return response()->json(['job_details'=>$vacency_details]);
     }
 
-    protected function view_individuals_job_details($job_id){
-        $details = \App\Job_vacency::where('id',$job_id)->get();
-
+    protected function view_individuals_job_details(Request $request){
+        $details = \App\Job_vacency::find($request->job_id);
+        
         return response()->json(['details'=>$details]);
     }
 

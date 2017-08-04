@@ -26,6 +26,9 @@ Route::get('/portfolio', function () {
 Route::get('/about-us', function () {
     return view('welcome');
 });
+Route::get('/view-job-details/{id}', function() {
+	return view('welcome');
+});
 
 Route::get('/admin','LoginController@index');
 

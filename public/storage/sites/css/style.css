@@ -1337,5 +1337,74 @@ box-shadow:         4px 4px 0px 0px #ccc;
 
 .job-thumbnail h4 {
     margin-bottom: 10px;
+    font-size: 13px !important;
+}
+
+.job-details {
+    margin: 50px 0px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    width: 100%;
+    float: left;
+}
+
+.job-details h2 {
+    border-bottom: 1px solid #DDD;
+    /*background-color: #f9f9f9;*/
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-bottom: 8px;
+    margin-top: 12px;
+}
+
+.heading2 {
+    font-size: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.job-details .inner {
+    padding: 20px;
+    float: left;
+    width: 100%;
+}
+
+.job-details h3 {
     font-size: 16px !important;
+}
+
+.job-thumbnail h5{
+    font-weight: normal;
+}
+
+.fbok{
+    width: 30px;
+    height: 30px;
+    background: #1d4868;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.fbok i{
+    font-size: 13px !important;
+}
+
+.Twit{
+    width: 30px;
+    height: 30px;
+    background: #56d7fe;
+    display: inline-block;
+    border-radius: 50%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.Twit i{
+    font-size: 13px !important;
 }
