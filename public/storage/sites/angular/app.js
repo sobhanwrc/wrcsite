@@ -89,6 +89,21 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 		});
 	}
 
+	// for facebook shring//
+	$scope.posts = [{id:1,title:"title1",content:"content1",caption:"caption1"},{id:2,title:"title2",content:"content2",caption:"caption2"}];
+	  	$scope.share = function(post){
+		    FB.ui(
+		    {
+		        method: 'feed',
+		        name: 'This is the content of the "name" field.',
+		        link: 'http://www.hyperarts.com/external-xfbml/'+post.id,
+		        picture: 'http://www.hyperarts.com/external-xfbml/share-image.gif',
+		        caption: post.caption,
+		        description: 'This is the content of the "description" field, below the caption.',
+		        message: ''
+		    });
+	  	}
+	//end//
 	
 
 }).directive('slider',function() {
