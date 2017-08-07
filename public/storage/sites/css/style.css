@@ -1427,3 +1427,7 @@ box-shadow:         4px 4px 0px 0px #ccc;
     padding: 10px;
     margin-top: 40px;
 }
+
+.innerimg img{
+    width: 100%;
+}
