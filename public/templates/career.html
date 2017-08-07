@@ -31,12 +31,13 @@
                 <div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="details in job_details">
                     <div class="job-thumbnail">
                         <h3>{{details.recruit_title}}</h3>
-                        <h4>Experience: {{details.experience}}</h4>
+                        <h4>Experience: {{details.experience}}{{details.experience}}</h4>
                         <p>Location: Kolkata</p>
                         <a href="/view-job-details/{{details.id}}" class="btn btn-primary">View Job Description</a>
                         <h5>Share with</h5>
-                        <a href="#" class="fbok"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" class="Twit"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        <a href="#" class="fbok" socialshare socialshare-provider="facebook" socialshare-text="{{details.recruit_title}} , Exp- {{details.experience}}, Location- Kolkata" socialshare-hashtags="angularjs, angular-socialshare" socialshare-url="http://720kb.net"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+
+                        <a href="#" class="Twit" socialshare socialshare-provider="twitter" socialshare-text="{{details.recruit_title}} , Exp- {{details.experience}}, Location- Kolkata" socialshare-hashtags="angularjs, angular-socialshare" socialshare-url="http://wrc.jygsaw.com/view-job-details/{{details.id}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
