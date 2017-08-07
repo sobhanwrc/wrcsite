@@ -15,5 +15,15 @@ appRoutes.config(function($routeProvider,$locationProvider){
 		templateUrl: 'templates/about-us.html'
 	}).when('/view-job-details/:id',{
 		templateUrl: 'templates/job_description.html'
+	}).when('/service',{
+		templateUrl: 'templates/service.html'
+	}).when('/software_developement',{
+		templateUrl: 'templates/software_development_service.html'
+	}).when('/mobile_application_service',{
+		templateUrl: 'templates/mobile_application_service.html'
+	}).when('/web_service',{
+		templateUrl: 'templates/web_application_service.html'
+	}).when('/saas_service',{
+		templateUrl: 'templates/saas_service.html'
 	});
 });

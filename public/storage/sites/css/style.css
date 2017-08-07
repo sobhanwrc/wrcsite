@@ -977,6 +977,7 @@ display:none;
     font-size: 16px;
     color: #686868;
     line-height: 24px;
+    text-align: justify;
 }
 
 .about_ser{
@@ -988,7 +989,7 @@ display:none;
 .about_ser h3{
     font-size: 18px;
     color: #000;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 
 .about_ser ul{
@@ -1407,4 +1408,26 @@ box-shadow:         4px 4px 0px 0px #ccc;
 
 .Twit i{
     font-size: 13px !important;
+}
+
+.sermore{
+    color: #1850a3;
+}
+
+.sermore:hover{
+    color: #1850a3;
+}
+
+.leftpad{
+    padding-left: 15px;
+}
+
+.innerimg{
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 40px;
+}
+
+.innerimg img{
+    width: 100%;
 }

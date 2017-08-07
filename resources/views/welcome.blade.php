@@ -29,6 +29,7 @@
     {!! Html::style('storage/sites/css/sweet-alert.css') !!}
     {!! Html::script('storage/sites/angular/appRoutes.js') !!}
     {!! Html::script('storage/sites/angular/app.js') !!}
+    {!! Html::script('storage/sites/angular/angular-socialshare/dist/angular-socialshare.js')!!}
 
     
    
