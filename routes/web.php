@@ -26,7 +26,28 @@ Route::get('/portfolio', function () {
 Route::get('/about-us', function () {
     return view('welcome');
 });
+
+Route::get('/service', function () {
+    return view('welcome');
+});
+
+Route::get('/software_developement', function () {
+	return view('welcome');
+});
+
+Route::get('/mobile_application_service', function (){
+	return view('welcome');
+});
+
 Route::get('/view-job-details/{id}', function() {
+	return view('welcome');
+});
+
+Route::get('/web_service', function (){
+	return view('welcome');
+});
+
+Route::get('/saas_service', function (){
 	return view('welcome');
 });
 

@@ -1,4 +1,4 @@
-var appWrc = angular.module('appWrc',['appRoutes', 'oitozero.ngSweetAlert','ngSanitize']);
+var appWrc = angular.module('appWrc',['appRoutes', 'oitozero.ngSweetAlert','ngSanitize', '720kb.socialshare']);
 
 appWrc.directive('myNavbar',function(){
 	return {
