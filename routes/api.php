@@ -22,4 +22,4 @@ Route::get('/wrc-website-details','PageController@wrc_website_details');
 Route::get('/load-home-content','PageController@load_home_content');
 Route::get('/job-vacency-details', 'PageController@job_vacency_details');
 Route::get('/view-job-details', 'PageController@view_individuals_job_details');
-
+Route::post('/applied-job', 'PageController@applied_job');

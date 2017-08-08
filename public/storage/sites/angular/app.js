@@ -16,6 +16,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	$scope.technical_skills = '';
 	$scope.soft_skills = '';
 	$scope.desired_candidate_profile = '';
+	$scope.myFile = {};
 	
 	$scope.doContact = function(valid) {
 		if(valid) {
@@ -88,6 +89,66 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 
 		});
 	}
+
+	$scope.doAppliedJob = function(valid){
+		if(valid){
+			$scope.isDisabled = true;
+			$http({
+			  method  : 'POST',
+			  url     : 'api/applied-job',
+			  processData: false,
+			  transformRequest: function (data) {
+			      var formData = new FormData();
+			      formData.append("myFile", $scope.myFile); 
+			      formData.append("myName", $scope.myName);  
+			      formData.append("myEmail", $scope.myEmail);
+			      formData.append("myPhone", $scope.myPhone);
+			      return formData;  
+			  },  
+			  data : $scope,
+			  headers: {
+			         'Content-Type': undefined
+			  }
+		   }).then(function (response) {
+		   		if(response.data.code == 500){
+		   			SweetAlert.swal({   
+						title: "Error",   
+						text: "Attachment should be pdf or doc file.",   
+						type: "warning",     
+						confirmButtonColor: "#DD6B55",   
+						confirmButtonText: "OK"
+					},  function(){ 
+					$scope.isDisabled = false; 
+					// window.location.reload();
+					
+					});
+		   		}
+
+		   		if(response.data.code == 100){
+		   			SweetAlert.swal({   
+					title: "Thank You",   
+					text: "Applied successfully!",   
+					type: "success",     
+					confirmButtonColor: "#DD6B55",   
+					confirmButtonText: "OK"
+				},  function(){ 
+					$scope.isDisabled = false; 
+					window.location.reload();
+					
+				});
+		   		}
+	       }).catch(function(reason){
+	       		
+	       });
+		}
+	};
+
+	$scope.attachDoc = function(element) {
+		 $scope.$apply(function($scope) {
+	       $scope.myFile = element.files[0];
+	       
+	      });
+	};
 	
 
 }).directive('slider',function() {

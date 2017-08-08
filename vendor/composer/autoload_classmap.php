@@ -11,6 +11,7 @@ return array(
     'AddFieldToUsersTable' => $baseDir . '/database/migrations/2017_07_25_090212_add_field_to_users_table.php',
     'AddFiledToJobTable' => $baseDir . '/database/migrations/2017_08_02_070109_add_filed-to_job_table.php',
     'AddSomeFiledToHomeBannersTable' => $baseDir . '/database/migrations/2017_07_19_093749_add_some_filed_to_home_banners_table.php',
+    'CreateAplliedJobsTable' => $baseDir . '/database/migrations/2017_08_08_091735_create_apllied_jobs_table.php',
     'CreateContactsTable' => $baseDir . '/database/migrations/2017_07_05_123106_create_contacts_table.php',
     'CreateHomeBannersTable' => $baseDir . '/database/migrations/2017_07_19_092509_create_home_banners_table.php',
     'CreateJobVacenciesTable' => $baseDir . '/database/migrations/2017_08_01_120450_create_job_vacencies_table.php',

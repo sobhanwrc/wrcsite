@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Contact;
+use App\Apllied_job;
 use App\website_settings;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\wrc_email;
+use Image;
+use Validator;
 
 class PageController extends Controller
 {
@@ -43,6 +46,58 @@ class PageController extends Controller
     	}
 
     	
+    }
+
+    protected function applied_job(Request $request){
+        $validator = validator::make($request->all(),[
+            'myFile' => 'required|mimes:pdf,doc|max:100000'
+        ]);
+
+        if($validator->fails()){
+            return response()->json([
+                'message' => $validator->messages()->first(),
+                'code' => 500]);
+        }else{
+
+            $name = $request->myName;
+            $emial = $request->myEmail;
+            $phone_no = $request->myPhone;
+            $document = $request->myFile;
+
+
+            if($request->hasFile('myFile')) {
+              $file = $request->file('myFile') ;
+
+              $original_file_name = $file->getClientOriginalName();
+
+              $fileName = time().'_'.$original_file_name ;
+
+              //thumb destination path
+              
+              $destinationPath_2 = public_path().'/upload/applied_job/resize' ;
+
+              $img = Image::make($file->getRealPath());
+
+              
+              $img->resize(1920, 500, function ($constraint){
+                  $constraint->aspectRatio();
+              })->save($destinationPath_2.'/'.$fileName);
+
+              //original destination path
+              $destinationPath = public_path().'/upload/applied_job/original/' ;
+              $file->move($destinationPath,$fileName);
+            }
+
+            $add = new Apllied_job();
+            $add->name = $name;
+            $add->email = $emial;
+            $add->phone_no = $phone_no;
+            $add->file = $fileName;
+
+            if($add->save()){
+                return response()->json(['code'=>100, 'message'=>'successfully added']);
+            }
+        }
     }
 
     public function wrc_website_details(){

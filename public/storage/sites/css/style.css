@@ -1431,3 +1431,21 @@ box-shadow:         4px 4px 0px 0px #ccc;
 .innerimg img{
     width: 100%;
 }
+
+.applyarea{
+    width: 100%;
+    float: left;
+    padding-bottom: 15px;
+}
+
+.applyarea input{
+    width: 100%;
+    padding: 6px 10px;
+    border: 0px;
+    background: #f1f1f1;
+    margin-top: 5px;
+}
+
+.applyarea input:focus{
+    border: 0;
+}

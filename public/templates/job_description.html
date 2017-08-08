@@ -52,20 +52,71 @@
                             <div class="row text-center">
                             <br>
                                 <div class="col-md-4 col-sm-4">
-                                    <a href="javascript:void(0);" data-scrollto="#template-contactform" data-easing="easeInOutExpo" data-speed="1250" class="btn btn-primary">Apply</a>
+                                   <!--  <a href="javascript:void(0);" data-scrollto="#template-contactform" data-easing="easeInOutExpo" data-speed="1250" class="btn btn-primary">Apply</a> -->
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    <a href="http://bit.ly/2s94ibe" class="btn btn-primary naukri" target="_blank">Apply via Naukri.com</a>
+                                    <a href="javascript:void(0)" class="btn btn-primary naukri"  ng-click="slideToggle=! slideToggle">Apply</a>
                                 </div>
                                 <div class="col-md-4 col-sm-4">
-                                    Share with <a href="#" class="fbok"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#" class="Twit"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                    Share with <a href="#" class="fbok" socialshare socialshare-provider="facebook" socialshare-via="1976355635939442" socialshare-type="sharer" socialshare-description="Unterkunft Casa Vincenzo in Agropoli, Campania buchen" socialshare-media="http://wrc-new.wrctechnologies.com/storage/sites/images/logo.jpg" socialshare-text="{{details.recruit_title}}" socialshare-url="http://wrc-new.wrctechnologies.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+
+                                    <a href="#" class="Twit" socialshare socialshare-provider="twitter" socialshare-text="{{details.recruit_title}},Exp- {{details.experience}}, Location- Kolkata" socialshare-url="http://wrc-new.wrctechnologies.com/view-job-details/{{details.id}}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                                 </div>
                             </div>
                         </div>
 
                         </div>
+
+
                         
+                    </div>
+                    <div class="col-md-4 col-md-offset-4" ng-show="slideToggle" id="apply">
+                        <form name="myAppliedJob" ng-controller="MainController" ng-submit="doAppliedJob(myAppliedJob.$valid)" method="post" novalidate="novalidate" enctype="multipart/form-data">
+
+                            <div class="applyarea" ng-class="{
+                                            'has-error':!myAppliedJob.myName.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted), 
+                                            'has-success': myAppliedJob.myName.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted)
+                                            }">
+                            Full Name
+                            <input type="text" name="myName" ng-model="myName" placeholder="Enter your name" required="required">
+                            <span class="help-block" ng-show="myAppliedJob.myName.$error.required && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Please Enter First Name</span>
+                            </div>
+
+                            <div class="applyarea" ng-class="{
+                                            'has-error':!myAppliedJob.myEmail.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted), 
+                                            'has-success': myAppliedJob.myEmail.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted)
+                                            }">
+                            Email
+                            <input type="email" name="myEmail" ng-model="myEmail" placeholder="Enter your email" required="required">
+
+                            <span class="help-block" ng-show="myAppliedJob.myEmail.$error.required && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Please Enter Email ID</span>
+                            <span class="help-block" ng-show="myAppliedJob.myEmail.$error.email && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Please Enter Valid Email ID</span>
+                            </div>
+
+                            <div class="applyarea" ng-class="{
+                                            'has-error':!myContactus.myPhone.$valid && (!myContactus.$pristine || myContactus.$submitted), 
+                                            'has-success': myContactus.myPhone.$valid && (!myContactus.$pristine || myContactus.$submitted)
+                                            }">
+                            Phone Number
+                            <input type="text" name="myPhone" ng-model="myPhone" placeholder="Enter your phone number" required="required" ng-maxlength="10" ng-minlength="10" ng-pattern="/^[0-9]*$/">
+
+                            <span class="help-block" ng-show="myAppliedJob.myPhone.$error.required && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Please Enter Mobile No</span>
+                            <span class="help-block" ng-show="myAppliedJob.myPhone.$error.pattern && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Mobile No Must Numeric</span>
+                            <span class="help-block" ng-show="myAppliedJob.myPhone.$error.maxlength && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Mobile No Must Have 10 Digits</span>
+                            <span class="help-block" ng-show="myAppliedJob.myPhone.$error.minlength && (!myAppliedJob.$pristine || myAppliedJob.$submitted)">Mobile No Must Have 10 Digits</span>
+
+                            </div>
+
+                            <div class="applyarea">
+                            Attachment
+                            <input type="file" name="myFile" ng-model="myFile" onchange="angular.element(this).scope().attachDoc(this)"  />
+                            </div>
+
+                            <div class="applyarea">
+                            <button type="submit" ng-disabled="isDisabled">Submit</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>

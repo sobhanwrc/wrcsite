@@ -31,6 +31,8 @@
     {!! Html::script('storage/sites/angular/app.js') !!}
     {!! Html::script('storage/sites/angular/angular-socialshare/dist/angular-socialshare.js')!!}
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.5.8/script.min.js"></script>
+
     
    
 </head>

@@ -306,6 +306,7 @@ class ComposerStaticInit16ced4f8260ba93e29838b737c5f7e59
         'AddFieldToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_25_090212_add_field_to_users_table.php',
         'AddFiledToJobTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_02_070109_add_filed-to_job_table.php',
         'AddSomeFiledToHomeBannersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_19_093749_add_some_filed_to_home_banners_table.php',
+        'CreateAplliedJobsTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_08_091735_create_apllied_jobs_table.php',
         'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_05_123106_create_contacts_table.php',
         'CreateHomeBannersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_19_092509_create_home_banners_table.php',
         'CreateJobVacenciesTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_120450_create_job_vacencies_table.php',
