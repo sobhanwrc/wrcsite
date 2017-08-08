@@ -103,6 +103,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 			      formData.append("myName", $scope.myName);  
 			      formData.append("myEmail", $scope.myEmail);
 			      formData.append("myPhone", $scope.myPhone);
+			      formData.append("myAppliedfor", $scope.applied_for);
 			      return formData;  
 			  },  
 			  data : $scope,

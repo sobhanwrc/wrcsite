@@ -73,6 +73,8 @@
                     <div class="col-md-4 col-md-offset-4" ng-show="slideToggle" id="apply">
                         <form name="myAppliedJob" ng-controller="MainController" ng-submit="doAppliedJob(myAppliedJob.$valid)" method="post" novalidate="novalidate" enctype="multipart/form-data">
 
+                        <input type="hidden" name="myAppliedfor" ng-model="myAppliedfor" value="{{details.recruit_title}}">
+
                             <div class="applyarea" ng-class="{
                                             'has-error':!myAppliedJob.myName.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted), 
                                             'has-success': myAppliedJob.myName.$valid && (!myAppliedJob.$pristine || myAppliedJob.$submitted)

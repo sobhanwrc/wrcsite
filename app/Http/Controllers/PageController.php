@@ -50,7 +50,7 @@ class PageController extends Controller
 
     protected function applied_job(Request $request){
         $validator = validator::make($request->all(),[
-            'myFile' => 'required|mimes:pdf,doc|max:100000'
+            'myFile' => 'required|mimes:pdf,doc|max:200000'
         ]);
 
         if($validator->fails()){
@@ -62,7 +62,7 @@ class PageController extends Controller
             $name = $request->myName;
             $emial = $request->myEmail;
             $phone_no = $request->myPhone;
-            $document = $request->myFile;
+            echo $applied_for = $request->myAppliedfor;die();
 
 
             if($request->hasFile('myFile')) {
@@ -71,17 +71,6 @@ class PageController extends Controller
               $original_file_name = $file->getClientOriginalName();
 
               $fileName = time().'_'.$original_file_name ;
-
-              //thumb destination path
-              
-              $destinationPath_2 = public_path().'/upload/applied_job/resize' ;
-
-              $img = Image::make($file->getRealPath());
-
-              
-              $img->resize(1920, 500, function ($constraint){
-                  $constraint->aspectRatio();
-              })->save($destinationPath_2.'/'.$fileName);
 
               //original destination path
               $destinationPath = public_path().'/upload/applied_job/original/' ;
@@ -93,6 +82,7 @@ class PageController extends Controller
             $add->email = $emial;
             $add->phone_no = $phone_no;
             $add->file = $fileName;
+            $add->applied_for = $applied_for;
 
             if($add->save()){
                 return response()->json(['code'=>100, 'message'=>'successfully added']);

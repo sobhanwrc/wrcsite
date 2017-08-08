@@ -9,6 +9,7 @@ return array(
     'AddFieldToJobTable' => $baseDir . '/database/migrations/2017_08_01_124258_add_field_to_Job_table.php',
     'AddFieldToTestimonialTable' => $baseDir . '/database/migrations/2017_07_20_100559_add_field_to_testimonial_table.php',
     'AddFieldToUsersTable' => $baseDir . '/database/migrations/2017_07_25_090212_add_field_to_users_table.php',
+    'AddFiledToAppliedJobTable' => $baseDir . '/database/migrations/2017_08_08_164943_add_filed_to_applied_job_table.php',
     'AddFiledToJobTable' => $baseDir . '/database/migrations/2017_08_02_070109_add_filed-to_job_table.php',
     'AddSomeFiledToHomeBannersTable' => $baseDir . '/database/migrations/2017_07_19_093749_add_some_filed_to_home_banners_table.php',
     'CreateAplliedJobsTable' => $baseDir . '/database/migrations/2017_08_08_091735_create_apllied_jobs_table.php',
