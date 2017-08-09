@@ -192,11 +192,11 @@
                 </div>
                 <div class="col-md-12 wow fadeIn">
                     <ul class="simplefilter">
-                        <li class="active" data-filter="all">All</li>
-                        <li data-filter="1">Software Development</li>
-                        <li data-filter="2">Mobile Application</li>
-                        <li data-filter="3">Web Development</li>
-                        <li data-filter="4">Website Design</li>
+                        <li class="{{active_class == 0 ? 'active': ''}}" data-filter="0" ng-click="filterPortFolio(0);">All</li>
+                        <li class="{{active_class == 1 ? 'active': ''}}" data-filter="1" ng-click="filterPortFolio(1);">Software Development</li>
+                        <li class="{{active_class == 2 ? 'active': ''}}" data-filter="2" ng-click="filterPortFolio(2);">Mobile Application</li>
+                        <li class="{{active_class == 3 ? 'active': ''}}" data-filter="3" ng-click="filterPortFolio(3);">Web Development</li>
+                        <li class="{{active_class == 4 ? 'active': ''}}" data-filter="4" ng-click="filterPortFolio(4);">Website Design</li>
                     </ul>
                     <!-- This is the set up of a basic gallery, your items must have the categories they belong to in a data-category
                         attribute, which starts from the value 1 and goes up from there -->

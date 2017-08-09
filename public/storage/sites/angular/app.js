@@ -17,7 +17,8 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	$scope.soft_skills = '';
 	$scope.desired_candidate_profile = '';
 	$scope.myFile = {};
-	
+	$scope.master_portfolio = {};
+	$scope.active_class = 0;
 	$scope.doContact = function(valid) {
 		if(valid) {
 			$scope.isDisabled = true;
@@ -103,7 +104,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 			      formData.append("myName", $scope.myName);  
 			      formData.append("myEmail", $scope.myEmail);
 			      formData.append("myPhone", $scope.myPhone);
-			      formData.append("myAppliedfor", $scope.applied_for);
+			      formData.append("myAppliedfor", $routeParams.id);
 			      return formData;  
 			  },  
 			  data : $scope,
@@ -114,7 +115,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 		   		if(response.data.code == 500){
 		   			SweetAlert.swal({   
 						title: "Error",   
-						text: "Attachment should be pdf or doc file.",   
+						text: "Attachment should be pdf or doc file and file size should be less then 1MB.",   
 						type: "warning",     
 						confirmButtonColor: "#DD6B55",   
 						confirmButtonText: "OK"
@@ -149,6 +150,33 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	       $scope.myFile = element.files[0];
 	       
 	      });
+	};
+
+	$scope.filterPortFolio = function(value) {
+		var tempArr = [];
+		if($scope.master_portfolio.length > 0) {
+			$scope.tempObj = angular.copy($scope.master_portfolio);
+			$scope.portfolio_details = angular.copy($scope.tempObj);
+		}
+		if(value != 0) {
+			$scope.master_portfolio = angular.copy($scope.portfolio_details);
+			for(var i=0;i<$scope.portfolio_details.length;i++) {
+					if(value == $scope.portfolio_details[i].portfolio_type) {
+						tempArr.push(
+							{
+								id:$scope.portfolio_details[i].id,
+								portfolio_name: $scope.portfolio_details[i].portfolio_name,
+								portfolio_image: $scope.portfolio_details[i].portfolio_image,
+								portfolio_type: $scope.portfolio_details[i].portfolio_type
+							});
+					}
+				}
+			
+			$scope.portfolio_details = angular.copy(tempArr);
+		}
+		$scope.active_class = value;
+		
+		
 	};
 	
 
@@ -192,12 +220,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
-        
         element.attr('data-category',attrs.setCustom);
-        new WOW().init();
-        scope.$watch('portfolio_details', function () {
-           $('#filtr_container').filterizr();
-        });
       }
     }
   }
@@ -205,7 +228,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	return {
 		restrict: 'A',
 		link: function (scope, element, attrs) {
-			element.css('height','698.969px');
+			element.css('height','auto');
 		}
 	}
 });

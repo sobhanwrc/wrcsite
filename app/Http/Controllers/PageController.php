@@ -8,6 +8,7 @@ use App\Apllied_job;
 use App\website_settings;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\wrc_email;
+use App\Mail\Applied_job_mail;
 use Image;
 use Validator;
 
@@ -62,7 +63,7 @@ class PageController extends Controller
             $name = $request->myName;
             $emial = $request->myEmail;
             $phone_no = $request->myPhone;
-            echo $applied_for = $request->myAppliedfor;die();
+            $applied_for = $request->myAppliedfor;
 
 
             if($request->hasFile('myFile')) {
@@ -85,7 +86,16 @@ class PageController extends Controller
             $add->applied_for = $applied_for;
 
             if($add->save()){
-                return response()->json(['code'=>100, 'message'=>'successfully added']);
+                //for email//
+                $to_email = 'sobhandas30@gmail.com';
+                try{
+                    Mail::to($to_email)->send(new Applied_job_mail($name,$email,$phone_number,$fileName));
+                    return response()->json(['code'=>100, 'message'=>'successfully added']);
+                }catch(\Exception $e){
+
+                    return response()->json(['code'=>500,'message'=>'error']);
+                }
+                
             }
         }
     }
