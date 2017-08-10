@@ -92,6 +92,7 @@ Route::group(['middleware' => ['adminlogin']], function() {
 	Route::get('/job_vacency_edit/{job_id}', 'BannerController@job_vacency_edit');
 	Route::get('/job_vacency_delete/{job_id}', 'BannerController@job_vacency_delete');
 	Route::post('/job_vacency_edit_submit/{job_id}', 'BannerController@job_vacency_edit_submit');
+	Route::get('/service_page_list', 'BannerController@service_page_list');
 	Route::get('/sign_out','LoginController@logout');
 
 });

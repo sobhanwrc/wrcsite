@@ -34,7 +34,7 @@ class PageController extends Controller
     	$save = $obj->save();
     	if($save){
     		//for email//
-    		$to_email = 'info@wrctechnologies.com';
+    		$to_email = 'sobhandas30@gmail.com';
     		try{
     			Mail::to($to_email)->send(new wrc_email($total_name,$phone_number,$comment,$email));
     			return response()->json(['code'=>100,'message'=>'succeess']);

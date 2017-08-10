@@ -678,4 +678,10 @@ class BannerController extends Controller
         return redirect('/job_vacency_list');
       }
     }
+
+    public function service_page_list(){
+      $fetch_list = website_settings::select('software_development','mobile_application','web_development')->get()->toArray();
+
+      return view('dashboard.service_page_listings');
+    }
 }

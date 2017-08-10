@@ -69,6 +69,11 @@
                             <textarea rows="6" name="myComments" ng-model="contact.myComments" required=""></textarea>
                             <span class="help-block" ng-show="myContactus.myComments.$error.required && (!myContactus.$pristine || myContactus.$submitted)">Please Enter Comments</span>
                         </div>
+
+                        <div class="col-md-12" vc-recaptcha key="'6LdtaSwUAAAAAEfrtnPa3mrbIJdR9Dl0M2ip6BbM'" ng-model="contact.myRecaptchaResponse">
+                            
+                        </div>
+
                         <div class="col-md-3">
                         <button type="submit" ng-disabled="isDisabled">SUBMIT</button>
                         </div>
