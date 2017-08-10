@@ -37,6 +37,13 @@
                   <input type="text" class="form-control" name="portfolio_name" id="portfolio_name" value="{{ $portfolio['portfolio_name'] }}">
                   <span class="text-danger">{{ $errors->first('portfolio_name') }}</span>
                 </div>
+
+                <div class="form-group {{ $errors->has('portfolio_url') ? 'has-error' : '' }}">
+                  <label for="exampleInputEmail1">Portfolio URL:</label>
+                  <input type="text" class="form-control" name="portfolio_url" id="portfolio_url" value="{{  $portfolio['portfolio_url']}}">
+                  <span class="text-danger">{{ $errors->first('portfolio_url') }}</span>
+                </div>
+
                 <div class="form-group {{ $errors->has('portfolio_type') ? 'has-error' : '' }}">
                   <label for="exampleInputPassword1">Portfolio Type:</label>
                   <select class="form-control" name="portfolio_type" id="portfolio_type">

@@ -30,6 +30,7 @@
                 <thead>
                 <tr>
                   <th> Portfolio Name</th>
+                  <th> Portfolio URL</th>
                   <th> Portfolio Image</th>
                   <th> Portfolio Type</th>
                   <th> Added Date</th>
@@ -40,6 +41,7 @@
                     @foreach($details_portfolio as $value)
                       <tr>
                         <td>{{$value['portfolio_name']}}</td>
+                        <td>{{$value['portfolio_url']}}</td>
                         <td><img src="{{url('upload/banner/resize/'.$value['portfolio_image'])}}" width="100" height="100"></td>
                         <td>{{$value['portfolio_type_name']}}</td>
                         <td>{{$value['created_at']}}</td>

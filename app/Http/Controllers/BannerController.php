@@ -249,10 +249,12 @@ class BannerController extends Controller
     public function portfolio_form_submit(Request $request){
       Validator::make($request->all(),[
         'portfolio_name' => 'required',
+        'portfolio_url' => 'required',
         'portfolio_type' => 'required',
         'portfolio_image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
       ], [
         'portfolio_name.required' => 'Please enter portfolio name',
+        'portfolio_url.required' => 'Please enter portfolio url',
         'portfolio_type.required' => 'Please select portfolio type',
         'portfolio_image.required' => 'Please choose portfolio image',
         'portfolio_image.image|mimes:jpeg,png,jpg,gif,svg' => 'Please choose proper image type',
@@ -290,6 +292,7 @@ class BannerController extends Controller
       //insert data into the database with create object fo model
       $obj = new Portfolio();
       $obj->portfolio_type = $portfolio_type;
+      $obj->portfolio_url = $portfolio_url;
       $obj->portfolio_name = $portfolio_name;
       $obj->portfolio_image = $fileName;
       $obj->status = '1';
@@ -502,10 +505,12 @@ class BannerController extends Controller
 
       Validator::make($request->all(),[
         'portfolio_name' => 'required',
+        'portfolio_url' => 'required',
         'portfolio_type' => 'required',
         'portfolio_image' => 'required_with|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
       ], [
         'portfolio_name.required' => 'Please enter portfolio name',
+        'portfolio_url.required' => 'Please enter portfolio url',
         'portfolio_type.required' => 'Please select portfolio type',
         'portfolio_image.required_with' => 'Please choose portfolio image',
         'portfolio_image.image|mimes:jpeg,png,jpg,gif,svg' => 'Please choose proper image type',
@@ -541,6 +546,7 @@ class BannerController extends Controller
 
       $fetch_portfolios = Portfolio::find($id);
       $fetch_portfolios->portfolio_name = $portfolio_name;
+      $fetch_portfolios->portfolio_url = $portfolio_url;
       $fetch_portfolios->portfolio_type = $portfolio_type;
       $fetch_portfolios->portfolio_image = $fileName;
       $fetch_portfolios->status = 1;

@@ -172,7 +172,7 @@
                         attribute, which starts from the value 1 and goes up from there -->
                     <div class="filtr-container" id="filtr_container" set-height>
                         <div class="col-xs-12 col-sm-4 col-md-4 filtr-item" ng-repeat="portfolio in portfolio_details"  set-custom="{{portfolio.portfolio_type}}"  data-sort="{{portfolio.portfolio_name}}">
-                            <a href="#"><img class="img-responsive" ng-src="/upload/banner/resize/{{portfolio.portfolio_image}}" alt="{{portfolio.portfolio_image}}"></a>
+                            <a href="{{portfolio.portfolio_url}}"><img class="img-responsive" ng-src="/upload/banner/resize/{{portfolio.portfolio_image}}" alt="{{portfolio.portfolio_image}}"></a>
                             <span class="item-desc">
                                     <h4>{{portfolio.portfolio_name}}</h4>
                                     <p>Software Development</p>

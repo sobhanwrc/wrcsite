@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddFieldToJobTable' => $baseDir . '/database/migrations/2017_08_01_124258_add_field_to_Job_table.php',
+    'AddFieldToPortfoliosTable' => $baseDir . '/database/migrations/2017_08_10_051726_add_field_to_portfolios_table.php',
     'AddFieldToTestimonialTable' => $baseDir . '/database/migrations/2017_07_20_100559_add_field_to_testimonial_table.php',
     'AddFieldToUsersTable' => $baseDir . '/database/migrations/2017_07_25_090212_add_field_to_users_table.php',
     'AddFiledToAppliedJobTable' => $baseDir . '/database/migrations/2017_08_08_164943_add_filed_to_applied_job_table.php',

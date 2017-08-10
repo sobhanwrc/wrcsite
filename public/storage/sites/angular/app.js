@@ -166,6 +166,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 							{
 								id:$scope.portfolio_details[i].id,
 								portfolio_name: $scope.portfolio_details[i].portfolio_name,
+								portfolio_url: $scope.portfolio_details[i].portfolio_url,
 								portfolio_image: $scope.portfolio_details[i].portfolio_image,
 								portfolio_type: $scope.portfolio_details[i].portfolio_type
 							});
