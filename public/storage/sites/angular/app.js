@@ -9,7 +9,7 @@ appWrc.directive('myNavbar',function(){
 });
 
 
-appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams,$sce){
+appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams,$sce,$filter){
 	$scope.banner_details = {};
 	$scope.testimonial_details = {};
 	$scope.portfolio_details = {};
@@ -19,6 +19,10 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	$scope.myFile = {};
 	$scope.master_portfolio = {};
 	$scope.active_class = 0;
+	$scope.software_development = '';
+	$scope.mobile_application = '';
+	$scope.web_development = '';
+
 	$scope.doContact = function(valid) {
 		if(valid) {
 			$scope.isDisabled = true;
@@ -49,6 +53,19 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 		$http.get('/api/wrc-website-details').then(function(response){
 
 			$scope.contact_details = response.data.contact_details;
+			$scope.software_development_full = $sce.trustAsHtml($scope.contact_details[0].software_development);
+			$scope.software_development = $filter('limitTo')($scope.contact_details[0].software_development, 50, 0);
+			$scope.software_development_short = $sce.trustAsHtml($scope.software_development);
+			
+
+			$scope.mobile_application_full = $sce.trustAsHtml($scope.contact_details[0].mobile_application);
+			$scope.mobile_application = $filter('limitTo')($scope.contact_details[0].mobile_application, 50, 0);
+			$scope.mobile_application_short = $sce.trustAsHtml($scope.mobile_application);
+
+
+			$scope.web_development_full = $sce.trustAsHtml($scope.contact_details[0].web_development);
+			$scope.web_development = $filter('limitTo')($scope.contact_details[0].web_development, 50, 0);
+			$scope.web_development_short = $sce.trustAsHtml($scope.web_development);
 
 		}).catch(function(reason){
 

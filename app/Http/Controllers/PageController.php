@@ -90,10 +90,10 @@ class PageController extends Controller
                 $to_email = 'sobhandas30@gmail.com';
                 try{
                     Mail::to($to_email)->send(new Applied_job_mail($name,$email,$phone_number,$fileName));
-                    return response()->json(['code'=>100, 'message'=>'successfully added']);
+                    return response()->json(['code'=>100,'message'=>'succeess']);
                 }catch(\Exception $e){
 
-                    return response()->json(['code'=>500,'message'=>'error']);
+                    return response()->json(['code'=>600,'message'=>'error']);
                 }
                 
             }

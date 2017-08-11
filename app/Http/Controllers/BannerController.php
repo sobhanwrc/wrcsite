@@ -680,8 +680,66 @@ class BannerController extends Controller
     }
 
     public function service_page_list(){
-      $fetch_list = website_settings::select('software_development','mobile_application','web_development')->get()->toArray();
+      $fetch_list = website_settings::select('id','software_development','mobile_application','web_development','created_at')->get()->toArray();
 
-      return view('dashboard.service_page_listings');
+      return view('dashboard.service_page_listings')->with('fetch_service_list',$fetch_list);
+    }
+
+    public function add_services_view(){
+      return view('dashboard.add_services_view');
+    }
+
+    public function services_add_submit(Request $request){
+      validator::make($request->all(),[
+        'sofware_service' => 'required',
+        'mobile_application' => 'required',
+        'web_service' => 'required'
+      ],[
+        'sofware_service.required' => 'Please enter software service deatils',
+        'mobile_application.required' => 'Please enter mobile application deatils',
+        'web_service.required' => 'Please enter web service deatils'
+      ])->validate();
+
+      $fetch_details_of_wrc = website_settings::find('1');
+      $fetch_details_of_wrc->software_development = $request->sofware_service;
+      $fetch_details_of_wrc->mobile_application = $request->mobile_application;
+      $fetch_details_of_wrc->web_development = $request->web_service;
+
+      if($fetch_details_of_wrc->save()){
+        $request->session()->flash("submit-status", "Services added successfully.");
+        return redirect('/service_page_list');
+      }
+    }
+
+    public function service_page_edit($service_id){
+      $id = base64_decode($service_id);
+
+      $fetch_details = website_settings::select('id','software_development','mobile_application','web_development')->where('id',$id)->get()->toArray();
+
+      return view('dashboard.service_page_edit')->with('fetch_details',$fetch_details[0]);
+    }
+
+    public function services_page_edit_submit(Request $request,$service_id){
+      $id = base64_decode($service_id);
+
+      validator::make($request->all(),[
+        'sofware_service' => 'required',
+        'mobile_application' => 'required',
+        'web_service' => 'required'
+      ],[
+        'sofware_service.required' => 'Please enter software service deatils',
+        'mobile_application.required' => 'Please enter mobile application deatils',
+        'web_service.required' => 'Please enter web service deatils'
+      ])->validate();
+
+      $details = website_settings::find($id);
+      $details->software_development = $request->sofware_service;
+      $details->mobile_application = $request->mobile_application;
+      $details->web_development = $request->web_service;
+
+      if($details->save()){
+        $request->session()->flash("submit-status", "Services edit successfully.");
+        return redirect('/service_page_list');
+      }
     }
 }

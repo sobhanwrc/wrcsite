@@ -26,7 +26,7 @@ class Applied_job_mail extends Mailable
         $this->name = $name;
         $this->mobile_number = $mobile_number;
         $this->email = $email;
-        $this->file = $file;
+        $this->attachment_file = $file;
     }
 
     /**
@@ -39,8 +39,8 @@ class Applied_job_mail extends Mailable
         return $this->from($this->emailfrom, 'WRC Technologies Pvt Ltd')
         ->subject('Applied Job')
         ->view('email.apply_for_job')
-        ->attach('/upload/applied_job/original/'.$this->file , [
-            'as' => $this->file,
+        ->attach('/upload/applied_job/original/'.$this->attachment_file , [
+            'as' => $this->attachment_file,
             'mime' => 'application/pdf,application/doc',
         ]);
     }

@@ -21,6 +21,7 @@ class wrc_email extends Mailable
     public $form_email_id;
     public $mobile_number;
     public $comment;
+    public $emailfrom;
 
     public function __construct($name,$mobile_number,$comment,$form_email_id)
     {
@@ -28,6 +29,7 @@ class wrc_email extends Mailable
         $this->mobile_number = $mobile_number;
         $this->comment = $comment;
         $this->emailfrom = $form_email_id;
+        
     }
 
     /**
