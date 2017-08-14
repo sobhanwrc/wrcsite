@@ -75,7 +75,11 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 	$scope.loadHomeSection = function() {
 		$http.get('/api/load-home-content').then(function(response){
 			$scope.banner_details = response.data.banner_details;
+			
 			$scope.testimonial_details = response.data.testimonial_details;
+
+
+
 			$scope.portfolio_details = response.data.portfolio_details;
 
 			/*setTimeout(function(){
@@ -196,7 +200,7 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 		
 		
 	};
-	
+
 
 }).directive('slider',function() {
     var linker = function(scope, element, attr) {
@@ -249,4 +253,15 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 			element.css('height','auto');
 		}
 	}
+}).directive( 'elemReady', function( $parse ) {
+   return {
+       restrict: 'A',
+       link: function( $scope, elem, attrs ) {    
+          elem.ready(function(){
+            $scope.$apply(function(){
+                $('#loader_image').delay(2000).fadeOut(1000);
+            })
+          })
+       }
+    }
 });

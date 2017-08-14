@@ -27,9 +27,9 @@
     {!! Html::script('storage/sites/angular/ng-sweet-alert.js') !!}
     {!! Html::script('storage/sites/angular/SweetAlert.min.js') !!}
     {!! Html::style('storage/sites/css/sweet-alert.css') !!}
+    {!! Html::script('storage/sites/angular/angular-socialshare/dist/angular-socialshare.js')!!}    
     {!! Html::script('storage/sites/angular/appRoutes.js') !!}
     {!! Html::script('storage/sites/angular/app.js') !!}
-    {!! Html::script('storage/sites/angular/angular-socialshare/dist/angular-socialshare.js')!!}
     {!! Html::script('storage/sites/angular/angular-recaptcha/release/angular-recaptcha.js')!!}
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.5.8/script.min.js"></script>
@@ -38,7 +38,11 @@
    
 </head>
 
-<body ng-cloak ng-app="appWrc" ng-controller="MainController" ng-init="company_details();loadHomeSection();">
+<body elem-ready ng-app="appWrc" ng-controller="MainController" ng-init="company_details();loadHomeSection();">
+    <div id="loader_image" style=" width: 100%; height: 800px; position: absolute; top: 0; left: 0; padding-top: 15%; text-align: center; overflow-y: hidden !important; overflow-x: hidden !important; background: #fff; z-index: 99999999999">
+        <img style="width: 100px; height:100px" src="/storage/sites/images/giphy.gif" alt="" class="" />
+
+    </div>
 
     <my-navbar></my-navbar>
     <div ng-view></div>
