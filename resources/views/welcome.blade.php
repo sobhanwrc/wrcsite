@@ -40,7 +40,7 @@
 
 <body elem-ready ng-app="appWrc" ng-controller="MainController" ng-init="company_details();loadHomeSection();">
     <div id="loader_image" style=" width: 100%; height: 800px; position: absolute; top: 0; left: 0; padding-top: 15%; text-align: center; overflow-y: hidden !important; overflow-x: hidden !important; background: #fff; z-index: 99999999999">
-        <img style="width: 100px; height:100px" src="/storage/sites/images/giphy.gif" alt="" class="" />
+        <img style="width: 100px; height:100px" src="/storage/sites/images/Custom-loader-ABT.gif" alt="" class="" />
 
     </div>
 

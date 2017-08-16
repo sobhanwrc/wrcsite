@@ -25,5 +25,7 @@ appRoutes.config(function($routeProvider,$locationProvider){
 		templateUrl: 'templates/web_application_service.html'
 	}).when('/saas_service',{
 		templateUrl: 'templates/saas_service.html'
+	}).when('/testimonial_details',{
+		templateUrl: 'templates/testimonials.html'
 	});
 });

@@ -24,7 +24,7 @@
           <div class="box box-primary">
             
             @if(Session::has('submit-status'))
-              <p class="login-box-msg" style="color: red;">{{ Session::get('submit-status') }}</p>
+              <p class="login-box-msg" style="color: green;">{{ Session::get('submit-status') }}</p>
             @endif
 
             <!-- /.box-header -->
@@ -47,6 +47,11 @@
                   <label for="exampleInputPassword1">Company Name:</label>
                   <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Company Name" value="{{ $fetch_details['company_name'] }}">
                   <span class="text-danger">{{ $errors->first('company_name') }}</span>
+                </div>
+                <div class="form-group {{ $errors->has('short_by') ? 'has-error' : '' }}">
+                  <label for="exampleInputPassword1">Short By:</label>
+                  <input type="text" class="form-control" name="short_by" id="short_by" placeholder="Short By" value="{{ $fetch_details['short_by'] }}">
+                  <span class="text-danger">{{ $errors->first('short_by') }}</span>
                 </div>
 
               </div>

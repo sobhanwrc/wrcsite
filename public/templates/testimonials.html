@@ -1,0 +1,40 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="inner_header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 wow fadeIn">
+                        <h2>Testimonials</h2>
+                        <div class="paging">
+                            Home  <a href="#">Testimonials</a>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+
+            <div class="maintestimonial">
+
+                <div class="col-md-4" ng-repeat="testimonial in testimonial_details">
+                    <div class="test_box wow fadeIn">
+                        <div class="quotation">
+                            {{testimonial.client_sdays}}
+                        </div>
+                        <div class="Towner">
+                            <img src="storage/sites/images/owner.jpg" alt="">
+                            <div class="ownername">
+                                <h4>{{testimonial.client_name}}</h4>
+                                <h5>{{testimonial.company_name}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>

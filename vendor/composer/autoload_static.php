@@ -305,6 +305,7 @@ class ComposerStaticInit16ced4f8260ba93e29838b737c5f7e59
         'AddFieldToJobTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_01_124258_add_field_to_Job_table.php',
         'AddFieldToPortfoliosTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_10_051726_add_field_to_portfolios_table.php',
         'AddFieldToTestimonialTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_20_100559_add_field_to_testimonial_table.php',
+        'AddFieldToTestimonials' => __DIR__ . '/../..' . '/database/migrations/2017_08_16_045100_add_field_to_testimonials.php',
         'AddFieldToUsersTable' => __DIR__ . '/../..' . '/database/migrations/2017_07_25_090212_add_field_to_users_table.php',
         'AddFiledToAppliedJobTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_08_164943_add_filed_to_applied_job_table.php',
         'AddFiledToJobTable' => __DIR__ . '/../..' . '/database/migrations/2017_08_02_070109_add_filed-to_job_table.php',

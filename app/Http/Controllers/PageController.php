@@ -107,7 +107,7 @@ class PageController extends Controller
 
     protected function load_home_content(Request $request) {
         $banner_details = \App\Home_banner::where('status','1')->get();
-        $testimonial_details = \App\Testimonial::where('status','1')->get();
+        $testimonial_details = \App\Testimonial::where('status','1')->orderby('short_by','asc')->get();
         $portfolio_details = \App\Portfolio::where('status','1')->get();
         return response()->json(['banner_details'=>$banner_details,'testimonial_details'=>$testimonial_details, 'portfolio_details'=>$portfolio_details]);
     }
@@ -123,6 +123,5 @@ class PageController extends Controller
         
         return response()->json(['details'=>$details]);
     }
-
    
 }

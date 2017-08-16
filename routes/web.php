@@ -51,6 +51,10 @@ Route::get('/saas_service', function (){
 	return view('welcome');
 });
 
+Route::get('/testimonial_details',function(){
+	return view('welcome');
+});
+
 Route::get('/admin','LoginController@index');
 
 Route::post('/login','LoginController@submit');

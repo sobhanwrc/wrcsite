@@ -24,7 +24,7 @@
           <div class="box box-primary">
             
             @if(Session::has('submit-status'))
-              <p class="login-box-msg" style="color: red;">{{ Session::get('submit-status') }}</p>
+              <p class="login-box-msg" style="color: green;">{{ Session::get('submit-status') }}</p>
             @endif
 
             <!-- /.box-header -->

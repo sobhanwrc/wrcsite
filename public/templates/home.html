@@ -200,15 +200,16 @@
                     <div id="testimonial-slider" class="owl-carousel wow fadeInDown top" testimonial>
                         <div class="testimonial" ng-repeat="testimonial in testimonial_details">
                             <p class="description">
-                                {{testimonial.client_sdays | limitTo: 50}}
+                                {{(testimonial.client_sdays | limitTo: 50) + (testimonial.client_sdays.length > 50 ? '...' : '')}}
                                 <br>
-                                <span>{{testimonial.client_name}} - {{testimonial.company_name}}</span>
+                                <span>{{testimonial.client_name}}</span>
+                                <span ng-if="testimonial.company_name">{{testimonial.company_name}}</span>
                             </p>
                         </div>
                     </div>
                     <br clear="all">
                     <br clear="all">
-                    <a href="#" class="Tmore">Read More</a>
+                    <a href="/testimonial_details" class="Tmore">Read More</a>
                 </div>
             </div>
         </div>

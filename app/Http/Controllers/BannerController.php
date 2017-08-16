@@ -163,18 +163,19 @@ class BannerController extends Controller
     public function testimonial_submit(Request $request){
       validator::make($request->all(),[
         'header1' => 'required',
-        'client_name' => 'required',
-        'company_name' => 'required'
+        'client_name' => 'required'
+        // 'company_name' => 'required'
       ], [
         'header1.required' => 'Please enter what client say about us',
-        'client_name.required' => 'Please enter client name',
-        'company_name.required' => 'Please enter company name'
+        'client_name.required' => 'Please enter client name'
+        // 'company_name.required' => 'Please enter company name'
       ])->validate();
 
       //getting value from view page
       $header1 = $request->header1;
       $client_name = $request->client_name;
       $company_name = $request->company_name;
+      $short_by = $request->short_by;
 
       //insert data into the database with create object fo model
       $obj = new Testimonial();
@@ -182,6 +183,7 @@ class BannerController extends Controller
       $obj->company_name = $company_name;
       $obj->client_sdays = $header1;
       $obj->status = '1';
+      $obj->short_by = $short_by;
 
       $save = $obj->save();
 
@@ -209,18 +211,19 @@ class BannerController extends Controller
 
       validator::make($request->all(),[
         'header1' => 'required',
-        'client_name' => 'required',
-        'company_name' => 'required'
+        'client_name' => 'required'
+        // 'company_name' => 'required'
       ],[
         'header1.required' => 'Please enter client says',
-        'client_name.required' => 'Please enter client name',
-        'company_name.required' => 'Please enter company name'
+        'client_name.required' => 'Please enter client name'
+        // 'company_name.required' => 'Please enter company name'
       ])->validate();
 
       $testimonial_list = Testimonial::find($id);
       $testimonial_list->client_sdays = $request->header1;
       $testimonial_list->client_name = $request->client_name;
       $testimonial_list->company_name = $request->company_name;
+      $testimonial_list->short_by = $request->short_by;
 
       if($testimonial_list->save()){
         $request->session()->flash("submit-status", "Edit successfully.");
