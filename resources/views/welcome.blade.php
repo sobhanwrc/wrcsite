@@ -1,11 +1,23 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>WRC Technologies Pvt. Ltd.</title>
+    <meta http-equiv="no-cache">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <meta property="og:image" content="http://wrctpl.com/storage/sites/images/inner_header.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="400" />
+    <meta property="og:image:height" content="300" />
+    {{-- <meta http-equiv="refresh" content="0;url=http://wrctpl.com/view-job-details/2"> --}}
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     {!! Html::style('storage/sites/css/bootstrap.min.css') !!}
@@ -39,6 +51,24 @@
 </head>
 
 <body elem-ready ng-app="appWrc" ng-controller="MainController" ng-init="company_details();loadHomeSection();">
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '1976355635939442',
+            xfbml: true,
+            version: 'v2.7'
+        });
+    };
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <div id="loader_image" style=" width: 100%; height: 800px; position: absolute; top: 0; left: 0; padding-top: 15%; text-align: center; overflow-y: hidden !important; overflow-x: hidden !important; background: #fff; z-index: 99999999999">
         <img style="width: 100px; height:100px" src="/storage/sites/images/Custom-loader-ABT.gif" alt="" class="" />
 

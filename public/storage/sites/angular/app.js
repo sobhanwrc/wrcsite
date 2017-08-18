@@ -201,6 +201,15 @@ appWrc.controller('MainController',function($scope,$http,SweetAlert,$routeParams
 		
 	};
 
+	
+  	$scope.share = function(post){
+    FB.ui({
+            method: "feed",
+            name: "PHP DEVELOPER - Codeigniter",
+            link: "http://wrctpl.com/view-job-details/1",
+            picture: "http://wrctpl.com/storage/sites/images/inner_header.jpg"
+    });
+  }
 
 }).directive('slider',function() {
     var linker = function(scope, element, attr) {
